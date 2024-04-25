@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SysML to AADL Tests
+Bundle-SymbolicName: org.osate.sysml.importer.test
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: org.osate.sysml.importer;bundle-version="1.0.0",
+ org.junit,
+ junit-jupiter-api,
+ org.omg.sysml,
+ org.omg.kerml.xtext,
+ org.omg.sysml.xtext,
+ org.eclipse.emf.transaction;bundle-version="1.9.2",
+ org.osate.xtext.aadl2,
+ org.osate.xtext.aadl2.properties;bundle-version="3.1.6",
+ org.osate.pluginsupport,
+ org.osate.annexsupport;bundle-version="4.0.1"
+Automatic-Module-Name: org.osate.sysml.importer.test
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Import-Package: org.eclipse.core.runtime

@@ -1,0 +1,70 @@
+-- SysML API access examples and SysML to AADL translator
+--
+-- Copyright 2024 Carnegie Mellon University.
+--
+-- NO WARRANTY. THIS CARNEGIE MELLON UNIVERSITY AND SOFTWARE ENGINEERING INSTITUTE MATERIAL IS
+-- FURNISHED ON AN "AS-IS" BASIS. CARNEGIE MELLON UNIVERSITY MAKES NO WARRANTIES OF ANY KIND,
+-- EITHER EXPRESSED OR IMPLIED, AS TO ANY MATTER INCLUDING, BUT NOT LIMITED TO, WARRANTY OF FITNESS
+-- FOR PURPOSE OR MERCHANTABILITY, EXCLUSIVITY, OR RESULTS OBTAINED FROM USE OF THE MATERIAL.
+-- CARNEGIE MELLON UNIVERSITY DOES NOT MAKE ANY WARRANTY OF ANY KIND WITH RESPECT TO FREEDOM FROM
+-- PATENT, TRADEMARK, OR COPYRIGHT INFRINGEMENT.
+--
+-- Licensed under an Eclipse Public License - v 2.0-style license, please see license.txt or
+-- contact permission@sei.cmu.edu for full terms.
+--
+-- [DISTRIBUTION STATEMENT A] This material has been approved for public release and unlimited
+-- distribution.  Please see Copyright notice for non-US Government use and distribution.
+--
+-- This Software includes and/or makes use of Third-Party Software each subject to its own license.
+--
+-- DM24-0393
+package port_connections
+public
+	system top
+	end top;
+
+	system implementation top.i
+		subcomponents
+			left_process: process left_process.i;
+			right_process: process right_process.i;
+		connections
+			across: port left_process.process_out -> right_process.process_in;
+	end top.i;
+
+	process left_process
+		features
+			process_out: out data port d;
+	end left_process;
+
+	process implementation left_process.i
+		subcomponents
+			left_thread: thread left_thread;
+		connections
+			up: port left_thread.thread_out -> process_out;
+	end left_process.i;
+
+	thread left_thread
+		features
+			thread_out: out data port d;
+	end left_thread;
+
+	process right_process
+		features
+			process_in: in data port d;
+	end right_process;
+
+	process implementation right_process.i
+		subcomponents
+			right_thread: thread right_thread;
+		connections
+			down: port process_in -> right_thread.thread_in;
+	end right_process.i;
+
+	thread right_thread
+		features
+			thread_in: in data port d;
+	end right_thread;
+
+	data d
+	end d;
+end port_connections;

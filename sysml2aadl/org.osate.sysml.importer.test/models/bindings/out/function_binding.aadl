@@ -1,0 +1,62 @@
+-- SysML API access examples and SysML to AADL translator
+--
+-- Copyright 2024 Carnegie Mellon University.
+--
+-- NO WARRANTY. THIS CARNEGIE MELLON UNIVERSITY AND SOFTWARE ENGINEERING INSTITUTE MATERIAL IS
+-- FURNISHED ON AN "AS-IS" BASIS. CARNEGIE MELLON UNIVERSITY MAKES NO WARRANTIES OF ANY KIND,
+-- EITHER EXPRESSED OR IMPLIED, AS TO ANY MATTER INCLUDING, BUT NOT LIMITED TO, WARRANTY OF FITNESS
+-- FOR PURPOSE OR MERCHANTABILITY, EXCLUSIVITY, OR RESULTS OBTAINED FROM USE OF THE MATERIAL.
+-- CARNEGIE MELLON UNIVERSITY DOES NOT MAKE ANY WARRANTY OF ANY KIND WITH RESPECT TO FREEDOM FROM
+-- PATENT, TRADEMARK, OR COPYRIGHT INFRINGEMENT.
+--
+-- Licensed under an Eclipse Public License - v 2.0-style license, please see license.txt or
+-- contact permission@sei.cmu.edu for full terms.
+--
+-- [DISTRIBUTION STATEMENT A] This material has been approved for public release and unlimited
+-- distribution.  Please see Copyright notice for non-US Government use and distribution.
+--
+-- This Software includes and/or makes use of Third-Party Software each subject to its own license.
+--
+-- DM24-0393
+package function_binding
+public
+	system s
+	end s;
+
+	system implementation s.i
+		subcomponents
+			functional_arch: system functional_arch.i;
+			system_arch: system system_arch.i;
+		properties
+			Actual_Function_Binding => (reference (system_arch.sub_a)) applies to functional_arch.sub_1;
+			Actual_Function_Binding => (reference (system_arch.sub_b),
+				reference (system_arch.sub_c)) applies to functional_arch.sub_2;
+			Actual_Function_Binding => (reference (system_arch.sub_b),
+				reference (system_arch.sub_c)) applies to functional_arch.sub_3;
+			Actual_Function_Binding => (reference (system_arch.f2)) applies to functional_arch.f1;
+	end s.i;
+
+	system functional_arch
+		features
+			f1: feature;
+	end functional_arch;
+
+	system implementation functional_arch.i
+		subcomponents
+			sub_1: system;
+			sub_2: system;
+			sub_3: system;
+	end functional_arch.i;
+
+	system system_arch
+		features
+			f2: feature;
+	end system_arch;
+
+	system implementation system_arch.i
+		subcomponents
+			sub_a: system;
+			sub_b: system;
+			sub_c: system;
+	end system_arch.i;
+end function_binding;

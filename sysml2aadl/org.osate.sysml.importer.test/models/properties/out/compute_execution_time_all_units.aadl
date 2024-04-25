@@ -1,0 +1,37 @@
+package compute_execution_time_all_units                                                    
+public                                                                                      
+	thread t1                                                                               
+		properties                                                                          
+			Compute_Execution_Time => 10ps .. 100ps delta 1ps;                              
+	end t1;                                                                                 
+                                                                                            
+	thread t2                                                                               
+		properties                                                                          
+			Compute_Execution_Time => 20ns .. 200ns delta 2ns;                              
+	end t2;                                                                                 
+                                                                                            
+	thread t3                                                                               
+		properties                                                                          
+			Compute_Execution_Time => 30us .. 300us delta 3us;                              
+	end t3;                                                                                 
+                                                                                            
+	thread t4                                                                               
+		properties                                                                          
+			Compute_Execution_Time => 40ms .. 400ms delta 4ms;                              
+	end t4;                                                                                 
+                                                                                            
+	thread t5                                                                               
+		properties                                                                          
+			Compute_Execution_Time => 50sec .. 500sec delta 5sec;                           
+	end t5;                                                                                 
+                                                                                            
+	thread t6                                                                               
+		properties                                                                          
+			Compute_Execution_Time => 60min .. 600min delta 6min;                           
+	end t6;                                                                                 
+                                                                                            
+	thread t7                                                                               
+		properties                                                                          
+			Compute_Execution_Time => -70hr .. 700hr delta 7hr;                              
+	end t7;                                                                                 
+end compute_execution_time_all_units;                                                       

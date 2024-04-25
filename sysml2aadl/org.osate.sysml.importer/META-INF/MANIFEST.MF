@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SysML v2 Importer
+Bundle-SymbolicName: org.osate.sysml.importer
+Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: .
+Bundle-Vendor: CMU/SEI
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.transaction;bundle-version="1.9.2",
+ org.omg.sysml;bundle-version="0.36.0",
+ org.omg.kerml.xtext;bundle-version="0.36.0",
+ org.omg.sysml.xtext;bundle-version="0.36.0",
+ org.apache.log4j;bundle-version="1.2.19",
+ org.osate.aadl2;bundle-version="5.0.0",
+ org.osate.xtext.aadl2;bundle-version="7.0.2",
+ org.osate.xtext.aadl2.properties;bundle-version="3.1.6",
+ org.osate.pluginsupport,
+ org.osate.annexsupport;bundle-version="4.0.1",
+ org.osate.aadl2.contrib;bundle-version="2.1.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Automatic-Module-Name: org.osate.sysml.importer
+Bundle-ActivationPolicy: lazy
+Export-Package: org.osate.sysml2aadl

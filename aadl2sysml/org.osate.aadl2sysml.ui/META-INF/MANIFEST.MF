@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: AADL to SysML Translator UI
+Bundle-SymbolicName: org.osate.aadl2sysml.ui;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.osate.aadl2sysml.ui.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources;bundle-version="3.18.200",
+ org.eclipse.emf.ecore,
+ org.osate.aadl2,
+ org.osate.aadl2sysml,
+ org.eclipse.ui.workbench,
+ org.eclipse.ui.ide;bundle-version="3.20.100",
+ org.osate.aadl2.modelsupport
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Automatic-Module-Name: org.osate.aadl2sysml.ui
+Bundle-ActivationPolicy: lazy

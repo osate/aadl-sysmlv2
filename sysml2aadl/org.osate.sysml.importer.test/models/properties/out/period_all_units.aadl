@@ -1,0 +1,37 @@
+package period_all_units
+public
+	thread t1
+		properties
+			Period => -1ps;
+	end t1;
+
+	thread t2
+		properties
+			Period => 2ns;
+	end t2;
+
+	thread t3
+		properties
+			Period => 3us;
+	end t3;
+
+	thread t4
+		properties
+			Period => 4ms;
+	end t4;
+
+	thread t5
+		properties
+			Period => 5sec;
+	end t5;
+
+	thread t6
+		properties
+			Period => 6min;
+	end t6;
+
+	thread t7
+		properties
+			Period => 7hr;
+	end t7;
+end period_all_units;

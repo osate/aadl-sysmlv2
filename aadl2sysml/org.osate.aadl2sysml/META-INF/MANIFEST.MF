@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: AADL to SysML Translator
+Bundle-SymbolicName: org.osate.aadl2sysml
+Bundle-Version: 1.0.0.qualifier
+Export-Package: org.osate.aadl2sysml
+Bundle-Activator: org.osate.aadl2sysml.Activator
+Bundle-ClassPath: lib/ST-4.3.4.jar,
+ .
+Require-Bundle: org.eclipse.core.runtime,
+ org.osate.aadl2,
+ org.eclipse.xtext,
+ org.osate.aadl2.contrib,
+ org.osate.aadl2.modelsupport,
+ org.osate.pluginsupport
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Automatic-Module-Name: org.osate.aadl2sysml
+Bundle-ActivationPolicy: lazy

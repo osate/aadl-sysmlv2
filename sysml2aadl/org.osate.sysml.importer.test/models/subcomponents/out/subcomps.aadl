@@ -1,0 +1,55 @@
+-- SysML API access examples and SysML to AADL translator
+--
+-- Copyright 2024 Carnegie Mellon University.
+--
+-- NO WARRANTY. THIS CARNEGIE MELLON UNIVERSITY AND SOFTWARE ENGINEERING INSTITUTE MATERIAL IS
+-- FURNISHED ON AN "AS-IS" BASIS. CARNEGIE MELLON UNIVERSITY MAKES NO WARRANTIES OF ANY KIND,
+-- EITHER EXPRESSED OR IMPLIED, AS TO ANY MATTER INCLUDING, BUT NOT LIMITED TO, WARRANTY OF FITNESS
+-- FOR PURPOSE OR MERCHANTABILITY, EXCLUSIVITY, OR RESULTS OBTAINED FROM USE OF THE MATERIAL.
+-- CARNEGIE MELLON UNIVERSITY DOES NOT MAKE ANY WARRANTY OF ANY KIND WITH RESPECT TO FREEDOM FROM
+-- PATENT, TRADEMARK, OR COPYRIGHT INFRINGEMENT.
+--
+-- Licensed under an Eclipse Public License - v 2.0-style license, please see license.txt or
+-- contact permission@sei.cmu.edu for full terms.
+--
+-- [DISTRIBUTION STATEMENT A] This material has been approved for public release and unlimited
+-- distribution.  Please see Copyright notice for non-US Government use and distribution.
+--
+-- This Software includes and/or makes use of Third-Party Software each subject to its own license.
+--
+-- DM24-0393
+package subcomps
+public
+	abstract a
+	end a;
+
+	abstract implementation a.i
+		subcomponents
+			sub8: system;
+			sub9: subprogram;
+			sub10: subprogram group;
+			sub11: thread;
+			sub12: thread group;
+			sub6: process;
+			sub7: processor;
+			sub14: virtual processor;
+			sub5: memory;
+			sub4: device;
+			sub2: bus;
+			sub13: virtual bus;
+			sub3: data;
+			sub1: abstract;
+	end a.i;
+
+	abstract implementation a.i2
+		subcomponents
+			s1: system s;
+			s2: system s.i;
+	end a.i2;
+
+	system implementation s.i
+	end s.i;
+
+	system s
+	end s;
+end subcomps;
