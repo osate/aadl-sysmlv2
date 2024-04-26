@@ -6,17 +6,16 @@ pipeline {
                 jdk "OpenJDK17"
             }
             steps {
-                dir (aadl2sysml) {
-                    withMaven(
-                        // Maven installation declared in the Jenkins "Global Tool Configuration"
-                        maven: 'M3',
-                        // Maven settings.xml file defined with the Jenkins Config File Provider Plugin
-                        // Maven settings and global settings can also be defined in Jenkins Global Tools Configuration
-                        //mavenSettingsConfig: 'my-maven-settings',
-                        mavenLocalRepo: '.repository'
-                    ) {
+                withMaven(
+                    maven: 'M3',
+                    // Maven settings.xml file defined with the Jenkins Config File Provider Plugin
+                    // Maven settings and global settings can also be defined in Jenkins Global Tools Configuration
+                    //mavenSettingsConfig: 'my-maven-settings',
+                    mavenLocalRepo: '.repository'
+                ) {
+                    dir (aadl2sysml) {
                         // Run the maven build
-                        sh 'mvn -T 3 -s aadl2sysml/seisettings.xml clean install -U -Dtycho.disableP2Mirrors=true -DfailIfNoTests=false'
+                        sh 'mvn -T 3 -s seisettings.xml clean install -U -Dtycho.disableP2Mirrors=true -DfailIfNoTests=false'
                     }
                }
             }
