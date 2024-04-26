@@ -13,7 +13,7 @@ pipeline {
                     //mavenSettingsConfig: 'my-maven-settings',
                     mavenLocalRepo: '.repository'
                 ) {
-                    dir (aadl2sysml) {
+                    dir ('aadl2sysml') {
                         // Run the maven build
                         sh 'mvn -T 3 -s seisettings.xml clean install -U -Dtycho.disableP2Mirrors=true -DfailIfNoTests=false'
                     }
@@ -22,7 +22,7 @@ pipeline {
         }
         stage('Deploy') {
         	steps {
-                dir (aadl2sysml) {
+                dir ('aadl2sysml') {
         		    sh 'bash ./deploy.sh'
         		}
         	}
