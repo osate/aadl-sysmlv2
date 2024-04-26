@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>aadl2sysml.releng</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+	</buildSpec>
+	<natures>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>Jenkinsfile</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Jenkinsfile</locationURI>
+		</link>
+		<link>
+			<name>README.md</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/README.md</locationURI>
+		</link>
+		<link>
+			<name>pom.xml</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/pom.xml</locationURI>
+		</link>
+		<link>
+			<name>seisettings.xml</name>
+			<type>1</type>
+			<location>/Users/lwrage/Projects/Siemens/git/MBE/aadl-sysml2/aadl2sysml/seisettings.xml</location>
+		</link>
+		<link>
+			<name>settings.xml</name>
+			<type>1</type>
+			<location>/Users/lwrage/Projects/Siemens/git/MBE/aadl-sysml2/aadl2sysml/settings.xml</location>
+		</link>
+	</linkedResources>
+</projectDescription>
