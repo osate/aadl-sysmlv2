@@ -20,6 +20,11 @@
 			<locationURI>PARENT-1-PROJECT_LOC/README.md</locationURI>
 		</link>
 		<link>
+			<name>deploy.sh</name>
+			<type>1</type>
+			<location>/Users/lwrage/Projects/Siemens/git/MBE/aadl-sysml2/aadl2sysml/deploy.sh</location>
+		</link>
+		<link>
 			<name>pom.xml</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/pom.xml</locationURI>
