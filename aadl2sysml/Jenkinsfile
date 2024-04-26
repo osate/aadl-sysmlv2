@@ -15,13 +15,13 @@ pipeline {
                     mavenLocalRepo: '.repository'
                 ) {
                     // Run the maven build
-                    sh 'mvn -T 3 -s seisettings.xml clean install -U -Dtycho.disableP2Mirrors=true -DfailIfNoTests=false'
+                    sh 'mvn -T 3 -s aadl2sysml/seisettings.xml clean install -U -Dtycho.disableP2Mirrors=true -DfailIfNoTests=false'
                 }
             }
         }
         stage('Deploy') {
         	steps {
-        		sh 'bash ./deploy.sh'
+        		sh 'bash cd aadl2sysml && ./deploy.sh'
         	}
         }
     }
