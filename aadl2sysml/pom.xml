@@ -25,7 +25,7 @@
 	
 	<modules>
 		<module>org.osate.aadl2sysml</module>
-		<!--module>org.osate.aadl2sysml.tests</module-->
+		<module>org.osate.aadl2sysml.tests</module>
 		<module>org.osate.aadl2sysml.ui</module>
 		<module>org.osate.aadl2sysml.feature</module>
 		<module>org.osate.aadl2sysml.repository</module>

@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: AADL to SysML Translator Tests
 Bundle-SymbolicName: org.osate.aadl2sysml.tests
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 0.1.0.qualifier
 Automatic-Module-Name: org.osate.aadl2sysml.tests
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Require-Bundle: org.junit,
