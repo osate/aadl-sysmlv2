@@ -42,7 +42,7 @@ public class SysMLTestHelper extends SysMLUtil {
 
 	private String aadlLibraryPath = "../../aadl.library";
 	
-	private String sysmlLibraryPath = "../../../../Systems-Modeling/SySML-v2-Pilot-Implementation/sysml.library/Domain Libraries/Quantities and Units/SI.sysml";
+	private String sysmlLibraryPath = "../../../SysML-v2-Pilot-Implementation/sysml.library/Domain Libraries/Quantities and Units/SI.sysml";
 
 	private Set<Resource> aadlLibraryResources = new HashSet<>();
 
