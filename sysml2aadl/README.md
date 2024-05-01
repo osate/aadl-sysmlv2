@@ -1,5 +1,3 @@
-= THESE INSTRUCTIONS ARE STILL WORK IN PROGRESS
-
 This repository contains the source code for an experimental translator from
 SysMLv2 to AADL. It reads SysML files or retrieves a SysML project from a SysML
 repository via the REST API.
@@ -8,43 +6,92 @@ repository via the REST API.
 
 ## Set up the development environment
 
+These instructions assume some familiarity with Eclipse.
+
 ### Install Eclipse 2023-12 Modeling Tools
 
-### Add OSATE plugins to Eclipse
+Download the Eclipse installer from https://eclipse.org. 
 
-Install feature OSATE2 for AADL and plugins Errormodel Edit Plugin and Testsupport
+Start the installer, switch to advanced mode, select _Eclipse Modeling Tools_ as the product, product version _2023-12_, and a Java 17 VM.
 
-During installation: 
+During installation: accept license, trust unsigned content
 
-*  Licenses: accept licenses
-*  Trust Authorities: select all authorities and trust selected
-*  Trust Unsigned: select all authorities and trust selected
+### Install OSATE plugins
 
-One of the trust dialogs may get stuck: change URL of py4j update site to
+In Eclipse: Help > Install New Software...
 
-`https://osate-build.sei.cmu.edu/p2/py4j`
+Type _https://osate-build.sei.cmu.edu/download/osate/stable/2.14.0/updates_ into the "Work with" text field > Enter
 
-### Import SysMLv2 pilot implementation plugin sources
+Check _OSATE2 for AADL2_ and _Uncategorized_ > Next > (wait a bit) > Next
 
-File > Import > Oomph
+Accept licenses > Finish
 
-Add URL of pilot implementation setup (Github project)
+In the "Trust authorities" dialog check all three update sites > Trust Selected
 
-`https://raw.githubusercontent.com/Systems-Modeling/SysML-v2-Pilot-Implementation/master/org.omg.sysml.installer/SysML2.setup`
+In the "Trust Unsigned" dialog > Select All > Trust Selected
 
-Import master
+Restart to finish the installation
+
+### Import SysMLv2 pilot implementation plugin source code
+
+In Eclipse: File > Import... > Oomph > Projects from Catalog > Next
+
+Click the green '+' icon
+
+Select catalog _Github Projects_ and enter Resource URI
+
+_https://raw.githubusercontent.com/Systems-Modeling/SysML-v2-Pilot-Implementation/master/org.omg.sysml.installer/SysML2.setup_
+
+Click OK
+
+Select project _Github Projects_ > _<User>_ > SysML2 and click Next
+
+In the "Variables" dialog
+
+* Select a location for the clone of the SysML2 git repository
+* Select _HTTPS (read-only, annonymous)_ for the "SysML2 Github repository"
+* Select a Java 17(!) version for the "JRE 11 Location"
+
+Click Next, then Finish
+
+Trust authorities and unsigned content
+
+Finally, click Finish to restart
+
+In Eclipse open the Java perspective, click on the blinking icon at the bottom, click Finish to restart again
+
+Click finish once the setup actions are done
+
+In the Package Explorer view show working sets
 
 Close jupyter related projects 
 
 *  jupyter-sysml-kernel
 *  org.omg.sysml.interactive
 *  org.omg.sysml.interactive.tests
-*  org.omg.jupyter.installer
-*  org.omg.jupyter.jupyterlab
+*  org.omg.sysml.jupyter.installer
+*  org.omg.sysml.jupyter.jupyterlab
+
+Remove the entry _com.ibm.icu.impl.text;version="58.2.0",_ from file MANIFEST.MF in project _org.omg.sysml_
 
 ### Get translator sources
 
-Import the projects from this repository
+In Eclipse: File > Import... > Git > Projects from Git > Next > Clone URI
+
+Enter URI _https://github.com/osate/aadl-sysmlv2.git_ > Next > Next
+
+Enter the location for the repository clone > Next > Next
+NOTE: The tests assume that the sysml pilot implementation and the repository are cloned into the same git root directory. 
+The tests read the SI.sysml library file from the pilot implementation, see SysMLTestHelper line 45.
+
+Select projects for import:
+* aadl.library
+* org.osate.sysml.importer
+* org.osate.sysml.importer.test
+
+Run the tests:
+
+Right click on project _org.osate.sysml.importer.test_ int the project explorer view > Run As > JUnit Test
 
 ## Create the runnable jar
 
@@ -52,7 +99,7 @@ Select project *org.osate.sysml.importer* in the project explorer view.
 
 *File* > *Export*... > *Java* > *Runnable JAR file* > *Next*
 
-In the Runnable JAR File Export dialog:
+In the "Runnable JAR File Export" dialog:
 
 1. Select launch configuration *SysML2AADLUtil*
 2. Select a directory and file name for the jar file, e.g., 
