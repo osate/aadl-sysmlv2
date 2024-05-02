@@ -2,6 +2,8 @@ This repository contains the source code for an experimental translator from
 SysMLv2 to AADL. It reads SysML files or retrieves a SysML project from a SysML
 repository via the REST API.
 
+A pre-built jar file can be downloaded from this repository's releases section.
+
 # Building the importer
 
 ## Set up the development environment
