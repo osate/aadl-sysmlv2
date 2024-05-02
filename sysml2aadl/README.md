@@ -4,7 +4,7 @@ repository via the REST API.
 
 A pre-built jar file can be downloaded from this repository's releases section.
 
-# Building the importer
+# Building the translator
 
 ## Set up the development environment
 
@@ -110,9 +110,9 @@ In the "Runnable JAR File Export" dialog:
 
 *Finish*
 
-# Using the importer
+# Using the translator
 
-The importer requires Java 17 or greater.
+The translator requires Java 17 or greater.
 
 `java -jar sysml2aadl.jar` will print a usage message.
 
