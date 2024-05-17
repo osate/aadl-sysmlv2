@@ -1,4 +1,42 @@
+/* SysML v2 Domain Library for AADL:
+ * references: 
+ * SAE AS-5506D AADL appendix A8
+ * OMG SysML v2 release 2024-02 */ 
+
 standard library package AADL_Project {
+	
+	enum def Supported_Dispatch_Protocols {
+		/* Periodic, Sporadic, Aperiodic, Timed, Hybrid, Background, <project-specified> */
+		enum Periodic;
+		enum Sporadic;
+		enum Aperiodic;
+		enum Timed;
+		enum Hybrid;
+		enum Background;
+	}
+	
+	alias Periodic for Supported_Dispatch_Protocols::Periodic;
+	alias Sporadic for Supported_Dispatch_Protocols::Sporadic;
+	alias Aperiodic for Supported_Dispatch_Protocols::Aperiodic;
+	alias Timed for Supported_Dispatch_Protocols::Timed;
+	alias Hybrid for Supported_Dispatch_Protocols::Hybrid;
+	alias Background for Supported_Dispatch_Protocols::Background;
+	
+	enum def Supported_Scheduling_Protocols {
+		/* FixedTimeline, Cooperative, RMS, EDF, SporadicServer, SlackServer, ARINC653 */
+		enum RM;
+		enum DM;
+		enum EDF;
+		enum HPF;
+		enum ARINC653;
+	}
+
+	alias RM for Supported_Scheduling_Protocols::RM;
+	alias DM for Supported_Scheduling_Protocols::DM;
+	alias EDF for Supported_Scheduling_Protocols::EDF;
+	alias HPF for Supported_Scheduling_Protocols::HPF;
+	alias ARINC653 for Supported_Scheduling_Protocols::ARINC653;
+
 	attribute def Time :> ISQ::DurationValue {
 		attribute :>> num: ScalarValues::Integer;
 	}

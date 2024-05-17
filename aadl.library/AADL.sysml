@@ -1,26 +1,7 @@
-/**
- * AADL Library for SysMLv2
- *
- * Copyright 2024 Carnegie Mellon University.
- * 
- * NO WARRANTY. THIS CARNEGIE MELLON UNIVERSITY AND SOFTWARE ENGINEERING
- * INSTITUTE MATERIAL IS FURNISHED ON AN "AS-IS" BASIS. CARNEGIE MELLON
- * UNIVERSITY MAKES NO WARRANTIES OF ANY KIND, EITHER EXPRESSED OR
- * IMPLIED, AS TO ANY MATTER INCLUDING, BUT NOT LIMITED TO, WARRANTY OF
- * FITNESS FOR PURPOSE OR MERCHANTABILITY, EXCLUSIVITY, OR RESULTS
- * OBTAINED FROM USE OF THE MATERIAL. CARNEGIE MELLON UNIVERSITY DOES NOT
- * MAKE ANY WARRANTY OF ANY KIND WITH RESPECT TO FREEDOM FROM PATENT,
- * TRADEMARK, OR COPYRIGHT INFRINGEMENT.
- * 
- * Licensed under a BSD (SEI)-style license, please see license.txt or
- * contact permission@sei.cmu.edu for full terms.
- *
- * [DISTRIBUTION STATEMENT A] This material has been approved for public
- * release and unlimited distribution.  Please see Copyright notice for
- * non-US Government use and distribution.
- * 
- * DM24-0309
-*/
+/* SysML v2 Domain Library for AADL:
+ * references: 
+ * SAE AS-5506D AADL chapters 4 to 10
+ * OMG SysML v2 release 2024-02 */ 
 
 standard library package AADL {
 	
@@ -60,6 +41,8 @@ standard library package AADL {
 	
 	part def Data :> Component {
 		attribute :>> category = ComponentCategory::Data;
+		
+		attribute value: Base::DataValue;
 	}
 	
 	part def Device :> Component {
@@ -81,6 +64,8 @@ standard library package AADL {
 	
 	part def Processor :> Component {
 		attribute :>> category = ComponentCategory::Processor;
+		
+		attribute Scheduling_Protocol : Deployment_Properties::Scheduling_Protocol;
 	}
 	
 	part def System :> Component {
@@ -104,6 +89,8 @@ standard library package AADL {
 		
 		attribute Compute_Execution_Time : Timing_Properties::Compute_Execution_Time;
 		attribute Period : Timing_Properties::Period;
+		attribute Dispatch_Protocol : Thread_Properties::Dispatch_Protocol;
+		attribute Priority : Thread_Properties::Priority;
 	}
 	
 	part def ThreadGroup :> Component {
@@ -176,12 +163,6 @@ standard library package AADL {
 	connection def FeatureGroupConnection :> Connection;
 	connection def ParameterConnection :> Connection;
 	
-	abstract connection def ActualBinding;
-	
-	abstract connection def ActualProcessorBinding :> ActualBinding;
-	abstract connection def ActualMemoryBinding :> ActualBinding;
-	abstract connection def ActualConnectionBinding :> ActualBinding;
-	abstract connection def ActualFunctionBinding :> ActualBinding;
-	
 	abstract attribute def Property;
+	
 }
